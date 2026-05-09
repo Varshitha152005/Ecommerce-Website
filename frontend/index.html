@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        if (!sessionStorage.getItem("loggedInUser")) {
+            window.location.href = "login.html";
+        }
+    </script>
+
+    <div class="topbar">
+
+        <h1>Online Bookstore</h1>
+
+        <div>
+            <span id="welcomeUser"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="searchBar"
+        placeholder="Search books..."
+        onkeyup="searchBooks()"
+    >
+
+    <div id="books"></div>
+
+    <a href="cart.html">
+        <button>Go To Cart</button>
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
