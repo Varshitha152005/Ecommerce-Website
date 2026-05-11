@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNow E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">🛍️ ShopNow</div>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+            <a href="#checkout">Checkout</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Mini E-Commerce Website</h1>
+            <p>Browse products, search by name, filter by category, add to cart, and place an order.</p>
+        </div>
+        <div class="hero-card">
+            <h3>Project Features</h3>
+            <ul>
+                <li>Product listing</li>
+                <li>Search and filter</li>
+                <li>LocalStorage cart</li>
+                <li>Spring JDBC checkout</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="controls">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <select id="categoryFilter">
+            <option value="All">All</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books">Books</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Home">Home</option>
+        </select>
+        <button id="refreshBtn">Refresh</button>
+    </section>
+
+    <main class="layout">
+        <section class="products-section" id="products">
+            <div class="section-title">
+                <h2>Products</h2>
+                <p>Click Add to Cart to store items in browser localStorage.</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+
+        <aside class="cart-section" id="cart">
+            <div class="section-title">
+                <h2>Cart</h2>
+                <p><span id="cartCount">0</span> item(s)</p>
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+            <div class="cart-summary">
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="cartTotal">₹0.00</strong>
+                </div>
+                <button id="clearCartBtn" class="secondary-btn">Clear Cart</button>
+            </div>
+        </aside>
+    </main>
+
+    <section class="checkout-section" id="checkout">
+        <div class="section-title">
+            <h2>Checkout</h2>
+            <p>Fill the form and place your order.</p>
+        </div>
+
+        <form id="checkoutForm" class="checkout-form">
+            <input type="text" id="customerName" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <textarea id="address" placeholder="Delivery Address" required></textarea>
+            <button type="submit" class="primary-btn">Place Order</button>
+        </form>
+
+        <div id="message" class="message"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
